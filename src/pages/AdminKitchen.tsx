@@ -186,10 +186,15 @@ const AdminKitchen = () => {
                 Real-time order management
               </p>
             </div>
-            <Button onClick={handleLogout} variant="outline">
-              <LogOut className="mr-2 h-4 w-4" />
-              Logout
-            </Button>
+            <div className="flex gap-3">
+              <Button onClick={() => navigate("/admin/tables")} variant="outline">
+                Stollar Boshqaruvi
+              </Button>
+              <Button onClick={handleLogout} variant="outline">
+                <LogOut className="mr-2 h-4 w-4" />
+                Chiqish
+              </Button>
+            </div>
           </div>
         </div>
       </div>

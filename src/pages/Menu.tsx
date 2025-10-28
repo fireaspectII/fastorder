@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
-import { useSearchParams } from "react-router-dom";
+import { useSearchParams, useNavigate } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { ShoppingCart, Plus, Minus, Trash2 } from "lucide-react";
+import { ShoppingCart, Plus, Minus, Trash2, ArrowLeft } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { ScrollArea } from "@/components/ui/scroll-area";
@@ -34,6 +34,7 @@ const categoryLabels: Record<string, string> = {
 
 const Menu = () => {
   const [searchParams] = useSearchParams();
+  const navigate = useNavigate();
   const tableNumber = parseInt(searchParams.get("table") || "1");
   const [menuItems, setMenuItems] = useState<MenuItem[]>([]);
   const [cart, setCart] = useState<CartItem[]>([]);
@@ -169,13 +170,24 @@ const Menu = () => {
       {/* Header */}
       <div className="sticky top-0 z-40 bg-background/95 backdrop-blur border-b">
         <div className="container mx-auto px-4 py-4">
+          <div className="mb-3">
+            <Button
+              variant="ghost"
+              onClick={() => navigate("/tables")}
+              size="sm"
+              className="gap-2"
+            >
+              <ArrowLeft className="h-4 w-4" />
+              Stollar ro'yxatiga qaytish
+            </Button>
+          </div>
           <div className="flex items-center justify-between">
             <div>
               <h1 className="text-3xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
                 Gourmet Restaurant
               </h1>
               <p className="text-sm text-muted-foreground mt-1">
-                Table {tableNumber}
+                {tableNumber}-stol
               </p>
             </div>
             <Sheet>
