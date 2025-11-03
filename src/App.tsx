@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import TableSelector from "./pages/TableSelector";
 import Menu from "./pages/Menu";
+import MyOrders from "./pages/MyOrders";
 import AdminAuth from "./pages/AdminAuth";
 import AdminKitchen from "./pages/AdminKitchen";
 import AdminTables from "./pages/AdminTables";
@@ -23,6 +24,7 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/tables" element={<TableSelector />} />
           <Route path="/menu" element={<Menu />} />
+          <Route path="/my-orders" element={<MyOrders />} />
           <Route path="/admin/auth" element={<AdminAuth />} />
           <Route path="/admin/kitchen" element={<AdminKitchen />} />
           <Route path="/admin/tables" element={<AdminTables />} />

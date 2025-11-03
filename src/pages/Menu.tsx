@@ -4,7 +4,7 @@ import { supabase } from "@/integrations/supabase/client";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { ShoppingCart, Plus, Minus, Trash2, ArrowLeft } from "lucide-react";
+import { ShoppingCart, Plus, Minus, Trash2, ArrowLeft, Receipt } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { ScrollArea } from "@/components/ui/scroll-area";
@@ -170,7 +170,7 @@ const Menu = () => {
       {/* Header */}
       <div className="sticky top-0 z-40 bg-background/95 backdrop-blur border-b">
         <div className="container mx-auto px-4 py-4">
-          <div className="mb-3">
+          <div className="mb-3 flex items-center justify-between">
             <Button
               variant="ghost"
               onClick={() => navigate("/tables")}
@@ -179,6 +179,15 @@ const Menu = () => {
             >
               <ArrowLeft className="h-4 w-4" />
               Stollar ro'yxatiga qaytish
+            </Button>
+            <Button
+              variant="outline"
+              onClick={() => navigate(`/my-orders?table=${tableNumber}`)}
+              size="sm"
+              className="gap-2"
+            >
+              <Receipt className="h-4 w-4" />
+              Buyurtmalarim
             </Button>
           </div>
           <div className="flex items-center justify-between">
