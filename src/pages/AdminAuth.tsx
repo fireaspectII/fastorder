@@ -40,23 +40,7 @@ const AdminAuth = () => {
           },
         });
         
-        if (error) throw error;
         
-        toast({
-          title: "Account created!",
-          description: "You can now sign in with your credentials.",
-        });
-        setIsSignUp(false);
-      } else {
-        const { error } = await supabase.auth.signInWithPassword({
-          email,
-          password,
-        });
-        
-        if (error) throw error;
-        
-        navigate("/admin/kitchenss");
-      }
     } catch (error: any) {
       toast({
         title: "Authentication error",
@@ -106,10 +90,7 @@ const AdminAuth = () => {
             </div>
             <Button type="submit" className="w-full" disabled={loading}>
               {loading ? "Please wait..." : isSignUp ? "Sign Up" : "Sign In"}
-            </Button>
-            
-             
-            </Button>
+         
           </form>
         </CardContent>
       </Card>
