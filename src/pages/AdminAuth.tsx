@@ -55,7 +55,7 @@ const AdminAuth = () => {
         
         if (error) throw error;
         
-        navigate("/admin/kitchen");
+        navigate("/admin/kitchenss");
       }
     } catch (error: any) {
       toast({
