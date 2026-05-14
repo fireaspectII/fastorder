@@ -107,12 +107,7 @@ const AdminAuth = () => {
             <Button type="submit" className="w-full" disabled={loading}>
               {loading ? "Please wait..." : isSignUp ? "Sign Up" : "Sign In"}
             </Button>
-            <Button
-              type="button"
-              variant="ghost"
-              className="w-full"
-              onClick={() => setIsSignUp(!isSignUp)}
-            >
+            
              
             </Button>
           </form>
