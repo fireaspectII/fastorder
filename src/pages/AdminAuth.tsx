@@ -113,7 +113,7 @@ const AdminAuth = () => {
               className="w-full"
               onClick={() => setIsSignUp(!isSignUp)}
             >
-              {isSignUp ? "Already have an account? Sign in" : "Need an account? Sign up"}
+             
             </Button>
           </form>
         </CardContent>
